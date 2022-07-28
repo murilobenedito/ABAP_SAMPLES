@@ -102,7 +102,7 @@ START-OF-SELECTION.
                                   ' ' 'BDC_OKCODE'                            '=BACK'.
 
   wa_params-racommit = abap_true.
-  wa_params-dismode = 'N'.        "A - visivel ou N background
+  wa_params-dismode = 'N'.        "A - visivel; E - So quando houve erro; N - background
 
 
   CALL TRANSACTION 'SU01' USING ti_bdcdata
