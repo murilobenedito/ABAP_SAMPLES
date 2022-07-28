@@ -124,7 +124,13 @@ START-OF-SELECTION.
       IMPORTING
         message_text_output = vl_texto.
 
-    WRITE: / vl_texto.
+    IF wa_msg-msgid = '01' AND wa_msg-msgnr = '039'.
+      WRITE: /1 icon_green_light AS ICON,
+            vl_texto.
+    ELSE.
+      WRITE: /1 icon_red_light AS ICON,
+            vl_texto.
+    ENDIF.
 
   ENDLOOP.
 
